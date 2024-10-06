@@ -72,7 +72,7 @@ local function makeDraggable(element)
     local dragInput
 
     element.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             isDragging = true
             startPos = input.Position
             dragInput = input
@@ -80,7 +80,7 @@ local function makeDraggable(element)
     end)
 
     element.InputChanged:Connect(function(input)
-        if isDragging and (input.UserInputType == Enum.UserInputType.MouseMovement) then
+        if isDragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
             local delta = input.Position - startPos
             element.Position = UDim2.new(
                 element.Position.X.Scale, 
