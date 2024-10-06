@@ -1,1 +1,16 @@
 game.Players.LocalPlayer.NoCD.Value=true
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))(); 
+
+local Notify = AkaliNotif.Notify; 
+
+Notify({ 
+
+Description = "This Script Made By DoctorGakra"; 
+
+Title = "Nigga F!cker"; 
+
+Duration = 5; 
+
+});
+
+
